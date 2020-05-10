@@ -519,6 +519,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "cocoball"
+version = "0.1.0"
+dependencies = [
+ "actix-rt",
+ "actix-web",
+ "anyhow",
+ "askama",
+ "chrono",
+ "clap",
+ "env_logger",
+ "log",
+ "serde",
+ "serde_json",
+ "timeago",
+ "toml",
+]
+
+[[package]]
 name = "copyless"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -802,24 +820,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61565ff7aaace3525556587bd2dc31d4a07071957be715e63ce7b1eccf51a8f4"
 dependencies = [
  "libc",
-]
-
-[[package]]
-name = "cocoball"
-version = "0.1.0"
-dependencies = [
- "actix-rt",
- "actix-web",
- "anyhow",
- "askama",
- "chrono",
- "clap",
- "env_logger",
- "log",
- "serde",
- "serde_json",
- "timeago",
- "toml",
 ]
 
 [[package]]
