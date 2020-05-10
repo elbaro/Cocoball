@@ -1,0 +1,21 @@
+{
+    "commit": {
+        "sha1": "5c7d7be28c2b70cc806f465667a798f8c5272b19",
+        "title": "commit 59",
+        "author": "alice",
+        "time": "2020-05-28T20:18:32.839482Z",
+        "url": "https://github.com/corporate/repo/commit/5c7d7be28c2b70cc806f465667a798f8c5272b19"
+    },
+    "benches": {
+        "cpplint warnings": {
+            "unit": "warning(s)",
+            "goal": "min",
+            "mean": 31
+        },
+        "test scenario": {
+            "unit": "ms",
+            "goal": "min",
+            "mean": 1000.8739058650481
+        }
+    }
+}

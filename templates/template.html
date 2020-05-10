@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+
+<body>
+    {% for (name, bench) in render_data.benches %}
+    <div>
+        <h2>{{bench.name}}</h2>
+        <canvas id="{{bench.name}}" width="800" height="400"></canvas>
+    </div>
+    {% endfor %}
+
+
+    <script>
+        {% for (name, bench) in render_data.benches %}
+        ctx = document.getElementById('{{bench.name}}').getContext('2d')
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [{% for label in render_data.xlabels %} "{{ label }}" {% if !loop.last %}, {% endif %} {% endfor %} ],
+            datasets: [
+            {
+                data: [{% for val in bench.means %} {{ val }} {% if !loop.last %}, {% endif %} {% endfor %}],
+        borderWidth: 1
+                    }
+                ]
+            },
+        options: {
+            scales: {yAxes: [{scaleLabel: {display: true, labelString: '{{ bench.unit }}' }}]},
+            responsive: false,
+                tooltips: {
+                mode: 'index',
+                    intersect: false,
+				},
+            hover: {
+                mode: 'nearest',
+                    intersect: true
+            }
+        }
+        });
+        {% endfor %}
+    </script>
+
+</body>
+
+</html>
